@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  <title>Exercice 3</title>
+</head>
+<body>
+  <form>
+    <input type="text" name="textBox" id="textBox" />
+    <button type="button" name="button" id="buttonTest" style="height: 80px; width: 150px;">Test</button>
+  </form>
+  <script>
+  // DECLARATION ET INITIALISATION DE LA VARIABLE POUR COMPTER
+  var count = 0;
+  // DECLARATION ET INITIALISATION DE LA VARIABLE DU NOMBRE ENTRE 0 et 100
+  var nombreDuPif =  Math.floor((Math.random() * 100) + 1);
+
+  // FONCTION LORSQU'ON CLIQUE SUR LE BOUTON TEST
+  $('#buttonTest').click(function(){
+    // DECLARATION ET INITIALISATION DE LA VARIABLE DE LA VALEUR DU CHAMP DE TEXTE #TEXTBOX
+    var textBox = $('#textBox').val();
+    // INCREMENTE LE COMPTEUR de 1
+    count++;
+    // CHEAT
+    console.log(nombreDuPif);
+    console.log(count);
+    console.log(textBox);
+    // COMPARAISON DES DEUX NOMBRES
+    if(textBox < nombreDuPif){
+      alert('Le nombre est plus grand');
+    }else if(textBox > nombreDuPif){
+      alert('Le nombre est plus petit');
+    }else{
+      if(count == 1){
+        // SI LE NOMBRE EST TROUVE DU PREMIER COUP ON LANCE UNE BOITE DE DIALOGUE PREDEFINIE
+        alert('La chance, vous avez trouvé le nombre en un seul essai');
+      }else{
+        // SINON ON DONNE LE NOMBRE D'ESSAIS POUR TROUVER LE NOMBRE
+        alert('Bravo, vous avez trouvé le nombre en ' + count + ' essais');
+      }
+    }
+  });
+  </script>
+</body>
+</html>
